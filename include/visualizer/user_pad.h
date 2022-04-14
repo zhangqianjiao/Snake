@@ -1,11 +1,12 @@
 #pragma once
-
+#include "iostream"
 #include <cinder/app/App.h>
 #include <glm/vec2.hpp>
 #include <cstddef>
 #include "cinder/gl/gl.h"
 #include "cinder/ImageIo.h"
 #include "cinder/gl/Texture.h"
+#include "../core/snake.h"
 
 namespace snakegame {
 
@@ -40,6 +41,11 @@ class Userpad {
    * Displays the current state of the sketchpad in the Cinder application.
    */
   void Draw();
+
+    /**
+   * Displays the current state of the sketchpad in the Cinder application.
+   */
+        void DrawSnake();
 
   /**
    * Shades in the sketchpad pixels whose centers are within brush_radius units
@@ -83,6 +89,13 @@ class Userpad {
   double pixel_side_length_;
 
   double brush_radius_;
+
+  Snake snake_;
+
+  /**
+   * record whether the position has part of snake
+   */
+    std::vector<std::vector<bool>> snake_vec_;
 
 };
 

@@ -30,7 +30,7 @@ class SnakeGame : public ci::app::App {
   const size_t kImageDimension = 28;
 
  private:
-  Userpad sketchpad_;
+  Userpad Userpad_;
 };
 
 }  // namespace visualizer
