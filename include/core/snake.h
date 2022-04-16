@@ -15,7 +15,7 @@ namespace snakegame {
 
         Snake();
 
-        Snake(int length, const std::string &color, const std::vector<std::pair<float, float>> &position);
+        Snake(int length, const std::string &color, const std::vector<std::pair<int, int>> &position);
 
         int getLength() const;
 
@@ -25,9 +25,9 @@ namespace snakegame {
 
         void setColor(const std::string &color);
 
-        const std::vector<std::pair<float, float>> &getPosition() const;
+        const std::vector<std::pair<int, int>> &getPosition() const;
 
-        void setPosition(const std::vector<std::pair<float, float>> &position);
+        void setPosition(std::vector<std::pair<int, int>> &position);
 
     private:
 
@@ -42,10 +42,12 @@ namespace snakegame {
         std::string color_;
 
         /**
-         * the vector that holds the position of each position of body
+         * the vector that holds the position of each part of body
+         * the head starts from the last position, tail is the first
          */
-         std::vector<std::pair<float, float>> position_;
+         std::vector<std::pair<int, int>> position_;
     public:
+        std::pair<int, int> getHead() const;
     };
 
 }

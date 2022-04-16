@@ -45,42 +45,19 @@ class Userpad {
     /**
    * Displays the current state of the sketchpad in the Cinder application.
    */
-        void DrawSnake();
-
-  /**
-   * Shades in the sketchpad pixels whose centers are within brush_radius units
-   * of the brush's location. (One unit is equal to the length of one sketchpad
-   * pixel.)
-   *
-   * @param brush_screen_coords the screen coordinates at which the brush is
-   *           located
-   */
-  void HandleBrush(const glm::vec2& brush_screen_coords);
+    void DrawSnake();
 
   /**
    * Set all of the sketchpad pixels to an unshaded state.
    */
     void Clear();
-    /**
-     * handle the key down process
-     */
-    void KeyDown();
 
-    /**
-     * handle the key up process
-     */
-    void KeyUp();
-    /**
-     * handle the key left process
-     */
-    void KeyLeft();
-    /**
-     * handle the key right process
-     */
-    void KeyRight();
+    Snake &getSnake();
+
+    void setSnake(Snake &snake);
 
 
- private:
+private:
   glm::vec2 top_left_corner_;
 
   size_t num_pixels_per_side_;

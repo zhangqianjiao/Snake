@@ -29,6 +29,24 @@ class SnakeGame : public ci::app::App {
   const double kMargin = 100;
   const size_t kImageDimension = 28;
 
+    /**
+     * handle the key down process
+     */
+    void KeyDown();
+
+    /**
+     * handle the key up process
+     */
+    void KeyUp();
+    /**
+     * handle the key left process
+     */
+    void KeyLeft();
+    /**
+     * handle the key right process
+     */
+    void KeyRight();
+
  private:
   Userpad Userpad_;
 };
