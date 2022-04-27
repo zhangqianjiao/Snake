@@ -29,6 +29,12 @@ namespace snakegame {
 
         void setPosition(std::vector<std::pair<int, int>> &position);
 
+        /**
+         * check if the position of snake valid
+         * @return true if valid, false invalid
+         */
+        bool checkPos();
+
     private:
 
         /**
@@ -45,7 +51,7 @@ namespace snakegame {
          * the vector that holds the position of each part of body
          * the head starts from the last position, tail is the first
          */
-         std::vector<std::pair<int, int>> position_;
+        std::vector<std::pair<int, int>> position_;
     public:
         std::pair<int, int> getHead() const;
     };

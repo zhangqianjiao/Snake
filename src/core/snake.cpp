@@ -1,3 +1,4 @@
+#include <iostream>
 #include "../../include/core/snake.h"
 
 
@@ -37,4 +38,37 @@ const std::vector<std::pair<int, int>> &snakegame::Snake::getPosition() const {
 
 void snakegame::Snake::setPosition(std::vector<std::pair<int, int>> &position) {
     position_ = position;
+}
+
+bool snakegame::Snake::checkPos() {
+    std::cout <<"checkPos" << "\n" ;
+
+    std::map<std::pair<int, int>, int> freq_map;
+    for (int i = 0; i < this->position_.size(); i++) {
+        if (this->position_[i].first < 0 || this->position_[i].first > 27
+            || this->position_[i].second < 0 || this->position_[i].second > 27) {
+            return false;
+        }
+
+        // find
+        if (freq_map.find(this->position_[i]) != freq_map.end()) {
+            freq_map[this->position_[i]] += 1;
+            std::cout << "Keyf: " << this->position_[i].first << " " << this->position_[i].second << " ; value: " <<  freq_map[this->position_[i]] << "\n";
+        } else { // not find
+            freq_map[this->position_[i]] = 1;
+            std::cout << "Keynf: " << this->position_[i].first << " " << this->position_[i].second << " ; value: " <<  freq_map[this->position_[i]] << "\n";
+
+        }
+
+
+    }
+
+    std::map<std::pair<int, int>, int>::iterator it;
+    for (it = freq_map.begin(); it != freq_map.end(); it ++) {
+        if (it->second > 1) {
+            return false;
+        }
+    }
+
+    return true;
 }

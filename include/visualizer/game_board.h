@@ -9,48 +9,56 @@
 
 namespace snakegame {
 
-namespace visualizer {
+    namespace visualizer {
 
 /**
  * Allows a user to draw a digit on a sketchpad and uses Naive Bayes to
  * classify it.
  */
-class SnakeGame : public ci::app::App {
- public:
-  SnakeGame();
+        class SnakeGame : public ci::app::App {
+        public:
+            SnakeGame();
 
-  void draw() override;
+            void draw() override;
 
-  void keyDown(ci::app::KeyEvent event) override;
+            void keyDown(ci::app::KeyEvent event) override;
 
-  // TODO: Delete this comment. Feel free to play around with these variables
-  // provided that you can see the entire UI on your screen.
-  const double kWindowSize = 875;
-  const double kMargin = 100;
-  const size_t kImageDimension = 28;
+            // TODO: Delete this comment. Feel free to play around with these variables
+            // provided that you can see the entire UI on your screen.
+            const double kWindowSize = 875;
+            const double kMargin = 100;
+            const size_t kImageDimension = 28;
 
-    /**
-     * handle the key down process
-     */
-    void KeyDown();
+            /**
+             * handle the key down process
+             */
+            void KeyDown();
 
-    /**
-     * handle the key up process
-     */
-    void KeyUp();
-    /**
-     * handle the key left process
-     */
-    void KeyLeft();
-    /**
-     * handle the key right process
-     */
-    void KeyRight();
+            /**
+             * handle the key up process
+             */
+            void KeyUp();
+            /**
+             * handle the key left process
+             */
+            void KeyLeft();
+            /**
+             * handle the key right process
+             */
+            void KeyRight();
 
- private:
-  Userpad Userpad_;
-};
+            bool EatFood(std::pair<int, int> head, std::pair<int, int> food, std::vector<std::pair<int, int>> &snake_vec);
 
-}  // namespace visualizer
+        private:
+            Userpad Userpad_;
+
+            /**
+             * true if over,
+             * false if not over
+             */
+            bool gameover;
+        };
+
+    }  // namespace visualizer
 
 }  // namespace snakegame
