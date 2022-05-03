@@ -12,6 +12,7 @@ snakegame::Snake::Snake(int length, const std::string &color, const std::vector<
 
 
 }
+
 std::pair<int, int> snakegame::Snake::getHead() const {
     return position_[position_.size() - 1];
 }
@@ -41,7 +42,6 @@ void snakegame::Snake::setPosition(std::vector<std::pair<int, int>> &position) {
 }
 
 bool snakegame::Snake::checkPos() {
-    std::cout <<"checkPos" << "\n" ;
 
     std::map<std::pair<int, int>, int> freq_map;
     for (int i = 0; i < this->position_.size(); i++) {
@@ -53,10 +53,10 @@ bool snakegame::Snake::checkPos() {
         // find
         if (freq_map.find(this->position_[i]) != freq_map.end()) {
             freq_map[this->position_[i]] += 1;
-            std::cout << "Keyf: " << this->position_[i].first << " " << this->position_[i].second << " ; value: " <<  freq_map[this->position_[i]] << "\n";
+//            std::cout << "Keyf: " << this->position_[i].first << " " << this->position_[i].second << " ; value: " <<  freq_map[this->position_[i]] << "\n";
         } else { // not find
             freq_map[this->position_[i]] = 1;
-            std::cout << "Keynf: " << this->position_[i].first << " " << this->position_[i].second << " ; value: " <<  freq_map[this->position_[i]] << "\n";
+//            std::cout << "Keynf: " << this->position_[i].first << " " << this->position_[i].second << " ; value: " <<  freq_map[this->position_[i]] << "\n";
 
         }
 

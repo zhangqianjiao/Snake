@@ -24,19 +24,16 @@ namespace snakegame {
             p2.first = 5;
             p2.second = 1;
             snake_vec.push_back(p2);
-            snake_.setPosition(snake_vec);
 
             std::pair<int, int> p3;
             p3.first = 5;
             p3.second = 2;
             snake_vec.push_back(p3);
-            snake_.setPosition(snake_vec);
 
             std::pair<int, int> p4;
             p4.first = 5;
             p4.second = 3;
             snake_vec.push_back(p4);
-            snake_.setPosition(snake_vec);
 
             std::pair<int, int> p5;
             p5.first = 5;

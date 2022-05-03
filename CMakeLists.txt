@@ -40,7 +40,7 @@ FetchContent_Declare(
 FetchContent_GetProperties(catch2)
 if(NOT catch2_POPULATED)
     FetchContent_Populate(catch2)
-    add_library(catch2 INTERFACE tests/test_week2.cpp)
+    add_library(catch2 INTERFACE )
     target_include_directories(catch2 INTERFACE ${catch2_SOURCE_DIR}/single_include)
 endif()
 
@@ -55,7 +55,7 @@ list(APPEND SOURCE_FILES    ${CORE_SOURCE_FILES}
         src/visualizer/game_board.cc
         src/visualizer/user_pad.cc)
 
-list(APPEND TEST_FILES tests/test_week1.cc tests/test_week2.cpp)
+list(APPEND TEST_FILES)
 
 
 ci_make_app(
