@@ -30,15 +30,6 @@ namespace snakegame {
             p3.second = 2;
             snake_vec.push_back(p3);
 
-            std::pair<int, int> p4;
-            p4.first = 5;
-            p4.second = 3;
-            snake_vec.push_back(p4);
-
-            std::pair<int, int> p5;
-            p5.first = 5;
-            p5.second = 4;
-            snake_vec.push_back(p5);
             snake_.setPosition(snake_vec);
 
             for (size_t row = 0; row < num_pixels_per_side_; ++row) {
@@ -56,13 +47,13 @@ namespace snakegame {
         void Userpad::DrawSnake() {
             auto snake_vec = snake_.getPosition();
 //    auto temp_snake_board =  snake_.getPosition();
-            for(int i = 0; i < snake_vec_.size(); i++) {
-                for(int j = 0; j < snake_vec_[i].size(); j++) {
+            for (int i = 0; i < snake_vec_.size(); i++) {
+                for (int j = 0; j < snake_vec_[i].size(); j++) {
                     snake_vec_[i][j] = false;
                 }
             }
 
-            for(int i = 0; i < snake_vec.size(); i++) {
+            for (int i = 0; i < snake_vec.size(); i++) {
                 snake_vec_[snake_vec[i].first][snake_vec[i].second] = true;
             }
 
@@ -141,7 +132,6 @@ namespace snakegame {
                 }
             }
             food = std::pair<int, int>(x, y);
-            std::cout << "new food" << food.first << food.second << "\n";
             int row = x;
             int col = y;
             vec2 pixel_top_left = top_left_corner_ + vec2(col * pixel_side_length_,

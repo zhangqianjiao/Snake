@@ -39,11 +39,11 @@ namespace snakegame {
             if (EatFood(next_pos, Userpad_.getFood(), snake_vec)) {
                 return;
             }
-            // 第一位获得新值 第二位=原来一地位
+
             for (int i = 0; i < snake_vec.size() - 1; i++) {
                 auto last_item = snake_vec[i + 1];
                 snake_vec[i] = last_item;
-                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
             }
 
             // move head to upper, move left part to previous one
@@ -51,25 +51,25 @@ namespace snakegame {
             snake_vec[snake_vec.size() - 1] = head;
 
             for (int i = 0; i < snake_vec.size(); i++) {
-                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
             }
             (Userpad_.getSnake()).setPosition(snake_vec);
             gameover = !(Userpad_.getSnake()).checkPos();
         }
 
         void SnakeGame::KeyUp() {
-            std::cout << "KeyUp" << "\n";
+//            std::cout << "KeyUp" << "\n";
             auto snake_vec = Userpad_.getSnake().getPosition();
             auto head = Userpad_.getSnake().getHead();
             auto next_pos = std::pair<int, int>(head.first - 1, head.second);
             if (EatFood(next_pos, Userpad_.getFood(), snake_vec)) {
                 return;
             }
-            // 第一位获得新值 第二位=原来一地位
+
             for (int i = 0; i < snake_vec.size() - 1; i++) {
                 auto last_item = snake_vec[i + 1];
                 snake_vec[i] = last_item;
-                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
             }
 
             // move head to upper, move left part to previous one
@@ -77,7 +77,7 @@ namespace snakegame {
             snake_vec[snake_vec.size() - 1] = head;
 
             for (int i = 0; i < snake_vec.size(); i++) {
-                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
 
             }
 
@@ -86,7 +86,7 @@ namespace snakegame {
         }
 
         void SnakeGame::KeyLeft() {
-            std::cout << "KeyLeft" << "\n";
+//            std::cout << "KeyLeft" << "\n";
             auto snake_vec = Userpad_.getSnake().getPosition();
             auto head = Userpad_.getSnake().getHead();
             auto next_pos = std::pair<int, int>(head.first, head.second - 1);
@@ -94,11 +94,11 @@ namespace snakegame {
                 return;
             }
 
-            // 第一位获得新值 第二位=原来一地位
+
             for (int i = 0; i < snake_vec.size() - 1; i++) {
                 auto last_item = snake_vec[i + 1];
                 snake_vec[i] = last_item;
-                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
             }
 
             // move head to upper, move left part to previous one
@@ -106,7 +106,7 @@ namespace snakegame {
             snake_vec[snake_vec.size() - 1] = head;
 
             for (int i = 0; i < snake_vec.size(); i++) {
-                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
 
             }
 
@@ -124,11 +124,11 @@ namespace snakegame {
                 return;
             }
 
-            // 第一位获得新值 第二位=原来一地位
+
             for (int i = 0; i < snake_vec.size() - 1; i++) {
                 auto last_item = snake_vec[i + 1];
                 snake_vec[i] = last_item;
-                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake " << i << ": " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
             }
 
             // move head to upper, move left part to previous one
@@ -136,7 +136,7 @@ namespace snakegame {
             snake_vec[snake_vec.size() - 1] = head;
 
             for (int i = 0; i < snake_vec.size(); i++) {
-                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                std::cout << "snake: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
 
             }
 
@@ -150,7 +150,7 @@ namespace snakegame {
                 this->Userpad_.setFood(std::pair<int, int>(-1, -1));
                 snake_vec.push_back(next_pos);
                 for (int i = 0; i < snake_vec.size(); i++) {
-                    std::cout << "snake after eat: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
+//                    std::cout << "snake after eat: " << snake_vec[i].first << " , " << snake_vec[i].second << "\n";
 
                 }
                 (Userpad_.getSnake()).setPosition(snake_vec);
